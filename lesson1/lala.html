@@ -1,0 +1,711 @@
+<style>
+.mp-content  { width: 100%; max-width: 800px; padding: 0 15px; margin: 0 auto;font-family: 'Montserrat', sans-serif; font-size: 18px; }
+.mp-content  p { font-family: 'Lato',Calibri,Arial,sans-serif;
+    font-size: 18px!important;
+    font-weight: normal!important;
+    color: #000!important; }
+.mp-content  b { font-weight: 600; }
+.mp-content  hr { margin: 50px 0; border-color: #f3eac9; border-style: solid; }
+.mp-content  h1 { color: #2E5768; font-size: 32px; font-weight: 400; }
+.mp-content  h2 { margin: 0 0 10px; color: #a00046; font-size: 26px; font-weight: 600; }
+.mp-content  h3 { margin: 0 0 10px; color: #2E5768; font-size: 20px; font-weight: 600; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;}
+.mp-content  h4 { margin: 0 0 10px; color: #2e5768; font-size: 18px; font-weight: normal; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+.mp-content  img { max-width: 100%; }
+.clearfix:before,
+.clearfix:after,
+.containerFluid:before,
+.containerFluid:after,
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after,
+.containerFluid:after,
+.row:after {
+  clear: both;
+}
+.spacer5 { height: 5px; clear: both; }
+.spacer10 { height: 10px; clear: both; }
+.spacer20 { height: 20px; clear: both; }
+.spacer30 { height: 30px; clear: both; }
+.spacer50 { height: 50px; clear: both; }            
+.spacer100 { height: 100px; clear: both; }
+.row-wrapper { padding: 0 15px; }
+.row { margin: 0; }
+.col-2, .col-3, .col-4, .col-5, 
+.col-6, .col-7, .col-8, .col-9 { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; box-sizing: border-box; }
+.col-2 { float: left; width: 16.66666667%; }
+.col-3 { float: left; width: 25%; }
+.col-4 { float: left; width: 33.33333333%; }
+.col-5 { float: left; width: 41.66666667%; }
+.col-6 { float: left; width: 50%; }
+.col-7 { float: left; width: 58.33333333%; }
+.col-8 { float: left; width: 66.66666667%;}
+.col-9 { float: left; width: 75%; }
+.title-wrap { text-align: center; }
+.max680 { max-width: 680px; margin: 0 auto;}
+.max700 { max-width: 700px; margin: 0 auto;}
+.pink { color: #ed6372 !important; }
+strong { color: #ed6372; font-weight: 400 !important; }
+strong.black { color: #333; }
+.bannerTxt {position: absolute; top: 250px; right: 25px; z-index: 10; max-width: 300px; text-align: left;}
+.banner img {min-width: 0; min-height: 0; max-width: 100%;}
+ .banner:after {background: none;}
+.red { color: #a00046; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.img-center { margin: 0 auto; }
+.note { background-color: #abbcc3; color: #fff; padding: 20px; }
+.note strong { color: #fff; }
+.box-wrapper { max-width: 700px; margin: 0 auto; color: #fff; text-align: center; }
+.box-wrapper.light { color: #333; }
+.box { box-sizing: border-box; width: 50%; float: left; padding: 5px; }
+.box h1 { margin: 60px 0; }
+.box .bx { padding: 30px; height: 200px; position: relative;  font-size: 18px; }
+.box .bx.yellow { background-color: #d1b24b;}
+.box .bx.grey { background-color: #abbcc3; }
+.img-wrap { min-height: 150px; }
+.list-unstyled { padding-left: 0; list-style: none; }
+.ingre table { margin: 0 auto;  max-width: 300px; font-size: 18px; }
+.table { width: 100%; max-width: 100%; margin-bottom: 20px; }
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: middle;
+}
+.table > thead > tr > th { vertical-align: bottom; border-bottom: 2px solid #ddd; }
+.bgYellow { background-color: #f4ecd2; padding: 25px 0; }
+.bgBrown { background-color: #e8d8a5; padding: 25px 0; }
+.sameHeight { position: relative; }
+.vcenter { position: absolute; top: 50%; -webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%); }
+.effect h3 { color: #ed6372; border-bottom: 2px dashed #EEA4A5; display: inline-block; padding-bottom: 5px; }
+.effect h4 { font-weight: 600; color: #000; }
+.range .table > tbody > tr > td { vertical-align: middle; border: 0;}
+.range h3 { color: #ed6372; }
+.containerFluid { padding: 0; }
+.red-p { color: #e31837!important; }
+
+@media (max-width: 768px) {
+    h3 { font-size: 18px; }
+    p { font-size: 14px; }
+    .col-3 { width: 50%; }        
+    .spacer100 { height: 50px; clear: both; }
+	.banner img {position: relative; left: 0; margin-left: 0;}
+}
+
+@media (max-width: 650px) {
+    .img-wrap { min-height: 0; }
+    .box h1 { margin: 20px 0; }
+    .box { float: none; width: 100%; }
+    .box .bx { height: auto; }
+    .title-wrap { overflow: hidden; }
+    .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9 { width: 100%; float: none; }
+    .bannerTxt {position: relative; top: 0; right: 0; max-width: none; padding: 0 25px;}
+    .vcenter { position: relative; top: 0; -webkit-transform: none;-moz-transform: none;-ms-transform: none;-o-transform: none;transform: none; }
+}
+
+.mpblog-post .mp-content img { width: auto;max-width: 100% !important; }
+.mpblog-post .mp-content a > img { border: 0; }
+.mpblog-post .mp-content table tr:nth-child(odd) td, .mpblog-post .mp-content table tr:nth-child(even) td { background: none; }
+.mpblog-post .mp-content a > img:hover { box-shadow: none; }
+</style>
+<div class="containerFluid">
+    <div class="banner"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/header.jpg" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/header.jpg"></a></div>
+    <div class="title-wrap overlap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title1.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="max700">
+        <div class="row-wrapper">
+            <div class="row">
+                <div class="col-6"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/liver.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/liver.png"></a></div>
+                <div class="col-6">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon1.png"></a></td>
+                                <td>Maintains proper digestion</td>
+                            </tr>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon2.png"></a></td>
+                                <td>Processes medicine</td>
+                            </tr>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon3.png"></a></td>
+                                <td>Processes fats with bile</td>
+                            </tr>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon4.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon4.png"></a></td>
+                                <td>Resists infection and removes bacteria</td>
+                            </tr>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon5.png"></a></td>
+                                <td>Eliminates wastes or toxins</td>
+                            </tr>
+                            <tr>
+                                <td><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/icon6.png"></a></td>
+                                <td>Regulates blood clotting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="spacer30">&nbsp;</div>
+        <p class="red text-center">Despite the importance of this organ, <strong>damage and stress to the liver</strong> is often caused due to our negligence.</p>
+        <div class="spacer30">&nbsp;</div>
+    </div>
+    <div class="row-wrapper text-center">
+        <div class="row">
+            <div class="col-3 sameHeight" style="height: 166px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/owl.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/owl.png"></a></div>
+                <p>Most of us either lack sleep or have <strong>poor sleep quality</strong>.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-3 sameHeight" style="height: 158px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/meat.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/meat.png"></a></div>
+                <p>We eat out frequently and consume a <strong>high-fat diet</strong>.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-3 sameHeight" style="height: 174px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/cake.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/cake.png"></a></div>
+                <p>Snacks are readily available along with <strong>sugar-laden food and alcohol</strong>.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-3 sameHeight" style="height: 176px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/medicine.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/medicine.png"></a></div>
+                <p>When we fall sick, we resort to <strong>medicines</strong> in an attempt to recover</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="max700">
+        <div class="text-center">
+            <p>What most of you do not know is that the modern lifestyle, as depicted above, has a <strong>detrimental impact on your liver</strong>, one of the most important organs in your body.</p>
+        </div>
+    </div>
+    <div class="spacer50">&nbsp;</div>
+    <div class="title-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title2.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="max580">
+        <div class="box-wrapper">
+            <div class="box">
+                <div class="bx grey">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img1.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img1.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 19px;">Chronic fatigue, or the feeling of being tired all the time.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bx yellow">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img2.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img2.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 38px;">Nausea or
+                        <br>vomiting</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bx yellow">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img3.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img3.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 19px;">Tendency to bruise easily</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bx grey">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img4.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img4.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 19px;">Loss of appetite Skin</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bx grey">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img5.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img5.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 19px;">Abdominal pain or swelling</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bx yellow">
+                    <div><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img6.png" rel="lightbox[mpblog_8]" target="_blank"><img class="img-center" alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/img6.png"></a></div>
+                    <div class="spacer10">&nbsp;</div>
+                    <p class="sameHeight" style="height: 19px;">Skin and eyes that appear yellowish (jaundice)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center">
+        <p>These symptoms are often dismissed as 'flu' or temporary sickness when jaundice is not visible. This is especially apparent amongst the youth who are unsuspecting of liver damage as the cause of their symptoms.</p>
+        <div class="spacer30">&nbsp;</div>
+        <p>What you do not know is that <strong>youths are also susceptible to liver diseases</strong>!</p>
+    </div>
+    <div class="spacer50">&nbsp;</div>
+    <div class="title-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title3.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image1.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <p class="text-center">When not taken care of, both ALD and NAFLD can cause liver inflammation, liver cirrhosis, or the <strong>irreversible scarring</strong> of your liver.</p>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center">
+        <p class="note">Did you know that the global prevalence of <strong>NAFLD</strong> is about <strong>24.4%?</strong></p>
+    </div>
+    <div class="spacer50">&nbsp;</div>
+    <div class="max700 text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image2.png"></a>
+        <div class="spacer30">&nbsp;</div>
+        <p>In Asian countries influenced by Western cultures like Singapore, the prevalence of NAFLD can be <strong>as high as 40%</strong>.</p>
+        <div class="spacer30">&nbsp;</div>
+        <p>Read on to find out if you are <strong>at risk</strong> of developing fatty liver disease.</p>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title5.png"></a>
+        <div class="spacer30">&nbsp;</div>
+        <a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/image3.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <p class="text-center">If you have ticked <strong>two or more of the above</strong>, you could be at risk of damaging your liver and developing fatty liver disease! Here is why!</p>
+    <div class="spacer50">&nbsp;</div>
+    <div class="row-wrapper text-center">
+        <div class="row">
+            <div class="col-4 sameHeight" style="height: 251px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey1.png"></a></div>
+                <h3>EATING OUT FREQUENTLY</h3>
+                <p>Eating out usually means more oil, more fats, less vegetables – resulting in an imbalanced portion.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 270px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey2.png"></a></div>
+                <h3>REGULAR HIGH ALCOHOL INTAKE</h3>
+                <p>Alcohol is toxic to your body and adds stress to your liver. It is diffcult to process and hinders your liver from performing its basic functions. It can destroy liver cells and cause fatty liver, hepatitis, or cirrhosis.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 261px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey3.png"></a></div>
+                <h3>INSUFFICIENT SLEEP</h3>
+                <p>Detoxification is one of your liver’s functions, and it occurs only when you are in deep sleep. You may risk damaging your liver when you stay up past 11pm daily</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 244px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey4.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey4.png"></a></div>
+                <h3>HIGH CONSUMPTION OF PROCESSED FOOD</h3>
+                <p>Processed food often contains artificial food additives and preservatives which are harmful to your liver.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 246px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey5.png"></a></div>
+                <h3>FREQUENT SUGAR INTAKE</h3>
+                <p>High sugar intake increases the chance of getting fatty liver as your liver is burdened to convert excess sugar into fats for storage.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 263px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey6.png"></a></div>
+                <h3>STRESS, PROLONGED SADNESS, OR EMOTIONAL STIMULATION</h3>
+                <p>A 10-year study by scientists at the University of Edinburgh found that those who had scored high for signs of depression and stress were far more likely to suffer fatal liver disease.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 239px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey7.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey7.png"></a></div>
+                <h3>BORDERLINE HIGH CHOLESTEROL</h3>
+                <p>Your liver processes body fats and turns glucose into fatty acid for long-term storage. Excess fats produced and stored by the liver may lead to fatty liver.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 257px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey8.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey8.png"></a></div>
+                <h3>HEAVY MEDICATION OR DRUGS</h3>
+                <p>Your liver breaks down many of the substances you consumed, including medicine like oral contraceptives, antiinflammatory drugs, or excessive Vitamin A. When taken in large amounts, this can cause damage to your liver.</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+            <div class="col-4 sameHeight" style="height: 258px;">
+                <div class="img-wrap"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey9.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/grey9.png"></a></div>
+                <h3>SKIPPING BREAKFAST</h3>
+                <p>When you wake up, your energy reserves of glucose are very low. This prevents your liver from getting energy to perform its essential functions. Don’t skip breakfast and neglect your liver health; it needs suffcient energy to start the day!</p>
+                <div class="spacer30">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title6.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="max580">
+        <div class="row-wrapper">
+            <div class="row">
+                <div class="col-7 sameHeight" style="height: 359px;">
+                    <div class="img-wrap text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/product.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/product.png"></a></div>
+                </div>
+                <div class="col-5 sameHeight" style="height: 57px;">
+                    <div class="spacer50">&nbsp;</div>
+                    <p>LAC Activated Liver Protector™ is formulated with <strong>Traditional Chinese Medicinal</strong> (TCM) herbs that promote and protect liver health. Nourish and protect the liver to maintain healthy liver function.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title7.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title7.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="max580 ingre">
+        <div class="row-wrapper">
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre1.png"></a>
+                        <br>
+                        <h4>Sanchi 三七</h4>
+                    </div>
+                    <div class="spacer30">&nbsp;</div>
+                </div>
+                <div class="col-7">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon1.png"></a></div>
+                                </td>
+                                <td>Promotes blood circulation</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon2.png"></a></div>
+                                </td>
+                                <td>Supports healthy blood lipid levels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre2.png"></a>
+                        <br>
+                        <h4>Turmeric 姜黄</h4>
+                        <br> <a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre3.png"></a>
+                        <br>
+                        <h4>Lotus Leaf 荷叶</h4>
+                        <br> <a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre4.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre4.png"></a>
+                        <br>
+                        <h4>Hawthorn Fruit 山楂</h4>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="spacer30">&nbsp;</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon3.png"></a></div>
+                                </td>
+                                <td>Promotes blood and <em>qi</em> circulation</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon4.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon4.png"></a></div>
+                                </td>
+                                <td>Aids digestion</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon5.png"></a></div>
+                                </td>
+                                <td>Prevents fatty liver</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre5.png"></a>
+                        <br>
+                        <h4>Dodder Seed 菟絲子</h4>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="spacer30">&nbsp;</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon6.png"></a></div>
+                                </td>
+                                <td>Enhances the liver, spleen and kidney functions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre6.png"></a>
+                        <br>
+                        <h4>Oriental Waterplantain Rhizome 泽泻</h4>
+                    </div>
+                    <div class="spacer30">&nbsp;</div>
+                </div>
+                <div class="col-7">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon7.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon7.png"></a></div>
+                                </td>
+                                <td>Supports healthy blood lipid levels</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon8.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon8.png"></a></div>
+                                </td>
+                                <td>Prevents fatty liver</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon9.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon9.png"></a></div>
+                                </td>
+                                <td>Promotes urination</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre7.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre7.png"></a>
+                        <br>
+                        <h4>Oriental Waterplantain Rhizome 泽泻</h4>
+                        <br> <a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre8.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre8.png"></a>
+                        <br>
+                        <h4>Red Peony Root 赤芍</h4>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="spacer30">&nbsp;</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon13.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon13.png"></a></div>
+                                </td>
+                                <td>Promotes blood circulation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre9.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre9.png"></a>
+                        <br>
+                        <h4>Largehead Atractylodes Rhizome 白术</h4>
+                    </div>
+                    <div class="spacer30">&nbsp;</div>
+                </div>
+                <div class="col-7">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon11.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon11.png"></a></div>
+                                </td>
+                                <td>Supports digestion</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon12.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon12.png"></a></div>
+                                </td>
+                                <td>Protects liver from toxins</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre10.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre10.png"></a>
+                        <br>
+                        <h4>Green Tangerine Peel 青皮</h4>
+                    </div>
+                    <div class="spacer30">&nbsp;</div>
+                </div>
+                <div class="col-7">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon13.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon13.png"></a></div>
+                                </td>
+                                <td>Promotes good <em>qi</em> flow</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon14.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon14.png"></a></div>
+                                </td>
+                                <td>Promotes good digestion</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre11.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre11.png"></a>
+                        <br>
+                        <h4>Chrysanthemum Flower 菊花</h4>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="spacer30">&nbsp;</div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="60">
+                                    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon15.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/ingre_icon15.png"></a></div>
+                                </td>
+                                <td>Helps to lower blood pressure and cholesterol levels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer50">&nbsp;</div>
+    <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title8.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/title8.png"></a></div>
+    <div class="spacer30">&nbsp;</div>
+    <div class="bgYellow">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow1.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow1.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>SAFETY FIRST</h3>
+                        <p>U.S. government dietary guideline states that men and women should drink no more than two drinks and one drink a day respectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgBrown">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow2.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow2.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>CAFFEINE BOOST</h3>
+                        <p>Coffee drinking has been shown to protect the liver by optimizing the flow of bile.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgYellow">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow3.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow3.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>LARGEST GLANDULAR ORGAN</h3>
+                        <p>The liver is the largest glandular organ of the human body; its weight is around 1.36 kilograms!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgBrown">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow4.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow4.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>MEDICINE CONVERTER</h3>
+                        <p>Without the liver, medicine would be useless. Our liver converts medicine into a form accepted by our bodies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgYellow">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow5.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow5.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>COLOUR OF STOOL</h3>
+                        <p>The liver produces bile, which is responsible for giving stool its characteristic brown colour. If the colour of the stool is not brown, something is wrong with the liver.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgBrown">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow6.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow6.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>SELF-GROWING ORGAN</h3>
+                        <p>The liver is the only organ that grows back, thus making it possible to donate part of it to another person.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgYellow">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow7.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow7.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>STRONG AND MIGHTY</h3>
+                        <p>The liver performs over 500 different functions including fighting off infection, neutralizing toxins and helping to clot blood.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgBrown">
+        <div class="max700">
+            <div class="row-wrapper">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="text-center"><a title="" href="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow8.png" rel="lightbox[mpblog_8]" target="_blank"><img alt="" src="http://staginggncmal.oniglobal.com/media/wysiwyg/Liver_Protector/doyouknow8.png"></a></div>
+                    </div>
+                    <div class="col-7">
+                        <div class="spacer20">&nbsp;</div>
+                        <h3>BE AWARE</h3>
+                        <p>Alcohol, Non-alcoholic Fatty Liver Disease and Viral Hepatitis are the most common causes of liver cirrhosis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30">&nbsp;</div>
+</div>
